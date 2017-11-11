@@ -1,4 +1,36 @@
 <resources>
     <string name="app_name">Prestamista</string>
     <string name="title_activity_principal">Inicio</string>
+    <string name="agregarClientes">Agregar Cliente</string>
+    <string name="cedula">Documento de Identidad</string>
+    <string name="nombre">Nombre</string>
+    <string name="apellido">Apellido</string>
+    <string name="guardar">Guardar</string>
+    <string name="limpiar">Limpiar</string>
+    <string name="direccion">Direccion</string>
+    <string name="celular">Celular</string>
+    <string name="simulador">Simulador de credito</string>
+    <string name="valorPrestamo">Valor a prestar</string>
+    <string name="porcentaje">Porcentaje de interés</string>
+    <string name="calcular">Calcular</string>
+    <string name="meses">Tiempo de pago (meses)</string>
+    <string name="error1">Debe llenar este campo</string>
+    <string name="error2">Debe ingresar un valor valido</string>
+    <string name="seleccione1">Seleccione un valor</string>
+    <string name="diario">Diario</string>
+    <string name="semanal">Semanal</string>
+    <string name="quincenal">quincenal</string>
+    <string name="mensual">mensual</string>
+    <string name="error3">Debe elegir una modalidad de pago</string>
+    <string name="valC">Valor Cuota:</string>
+    <string name="nCuot">No. Cuotas:</string>
+    <string name="cuotas">Cuotas</string>
+    <string name="total">Total:</string>
+    <string-array name="modo">
+        <item>@string/seleccione1</item>
+        <item>@string/diario</item>
+        <item>@string/semanal</item>
+        <item>@string/quincenal</item>
+        <item>@string/mensual</item>
+    </string-array>
 </resources>

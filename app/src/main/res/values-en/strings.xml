@@ -2,4 +2,5 @@
 <resources>
     <string name="app_name">Lender</string>
     <string name="title_activity_principal">Home</string>
+    <string name="agregarClientes">Add Client</string>
 </resources>
