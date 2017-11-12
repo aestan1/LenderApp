@@ -11,6 +11,10 @@ public class Abono {
     private int valor;
     private String fecha;
 
+    public Abono(){
+
+    }
+
     public Abono(int valor, String fecha) {
         this.valor = valor;
         this.fecha = fecha;

@@ -21,7 +21,13 @@
             android:label="@string/title_activity_principal"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".AgregarCliente" />
-        <activity android:name=".Simulador"></activity>
+        <activity android:name=".Simulador" />
+        <activity android:name=".AgregarPrestamo" />
+        <activity android:name=".AgregarAbono" />
+        <activity
+            android:name=".Principal"
+            android:label="@string/title_activity_principal"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

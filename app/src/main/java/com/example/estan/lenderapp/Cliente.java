@@ -15,6 +15,10 @@ public class Cliente {
     private String celular;
     private Prestamo prestamo;
 
+    public Cliente(){
+
+    }
+
     public Cliente(String cedula, String nombre, String apellido, int sexo, String direccion, String celular, Prestamo prestamo) {
         this.cedula = cedula;
         this.nombre = nombre;

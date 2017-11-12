@@ -32,6 +32,13 @@ public class Datos {
     public static String getId(){
         return databaseReference.push().getKey();
     }
+    public static void actualizar(Cliente c){
+        databaseReference.child(bd).child(c.getId()).setValue(c);
+    }
+
+    public static void eliminar (Cliente c){
+        databaseReference.child(bd).child(c.getId()).removeValue();
+    }
 
 
 }

@@ -31,6 +31,10 @@
     <string name="m">Masculino</string>
     <string name="f">Femenino</string>
     <string name="mensaje_cliente_guardado">Cliente guardado con exito!</string>
+    <string name="agregarP">Agregar Prestamo</string>
+    <string name="fecha">Fecha y hora</string>
+    <string name="agregarA">Agregar Abono</string>
+    <string name="valorAbono">Valor a abonar</string>
     <string-array name="modo">
         <item>@string/seleccione1</item>
         <item>@string/diario</item>

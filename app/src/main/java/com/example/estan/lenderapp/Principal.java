@@ -1,13 +1,32 @@
 package com.example.estan.lenderapp;
 
+import android.content.Intent;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
-public class Principal extends AppCompatActivity {
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
+
+public class Principal extends AppCompatActivity  implements AdaptadorCliente.OnClienteClickListener{
+    private RecyclerView listado;
+    private ArrayList<Cliente> clientes;
+    private Resources res;
+    private AdaptadorCliente adapter;
+    private LinearLayoutManager llm;
+    private DatabaseReference databaseReference;
+    private  final String BD="Clientes";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,14 +35,60 @@ public class Principal extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-       FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
+
+        listado = (RecyclerView)findViewById(R.id.lstClientes);
+        res = this.getResources();
+        clientes = new ArrayList<>();
+
+        adapter = new AdaptadorCliente(this.getApplicationContext(),clientes,this);
+        llm = new LinearLayoutManager(this);
+        listado.setLayoutManager(llm);
+        listado.setAdapter(adapter);
+        databaseReference = FirebaseDatabase.getInstance().getReference();
+
+
+        databaseReference.child(BD).addValueEventListener(new ValueEventListener() {
             @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                clientes.clear();
+                if (dataSnapshot.exists()){
+                    for(DataSnapshot snapshot:dataSnapshot.getChildren()){
+                        Cliente c =snapshot.getValue(Cliente.class);
+                        clientes.add(c);
+                    }
+                }
+                adapter.notifyDataSetChanged();
+                Datos.setClientes(clientes);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
             }
         });
     }
 
+
+
+    public void agregar (View v){
+        Intent i = new Intent(Principal.this,AgregarCliente.class);
+        startActivity(i);
+
+    }
+
+
+    @Override
+    public void onClienteClick(Cliente c) {
+        Intent i = new Intent(Principal.this,AgregarAbono.class);
+        Bundle b = new Bundle();
+        b.putString("id",c.getId());
+        b.putString("cedula",c.getCedula());
+        b.putString("nombre",c.getNombre());
+        b.putString("apellido",c.getApellido());
+
+
+        i.putExtra("datos",b);
+        startActivity(i);
+    }
 }

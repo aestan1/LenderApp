@@ -12,6 +12,10 @@ public class Prestamo {
     private String fechaF;
     private Abono abono;
 
+    public Prestamo(){
+
+    }
+
 
     public Prestamo(String id, int valor, int deudaActual, String fechaI, String fechaF, Abono abono) {
         this.id = id;
