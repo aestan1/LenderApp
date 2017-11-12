@@ -20,7 +20,7 @@ public class SplashActivity extends Activity {
 
         new Handler().postDelayed(new Runnable(){
             public void run(){
-                Intent intent = new Intent(SplashActivity.this, Simulador.class);
+                Intent intent = new Intent(SplashActivity.this, AgregarCliente.class);
                 startActivity(intent);
                 finish();
             };

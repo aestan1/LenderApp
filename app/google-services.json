@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "263173899177",
+    "firebase_url": "https://cobradiario-d466f.firebaseio.com",
+    "project_id": "cobradiario-d466f",
+    "storage_bucket": "cobradiario-d466f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:263173899177:android:ebb9914c79ccf309",
+        "android_client_info": {
+          "package_name": "com.example.estan.lenderapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "263173899177-l3um59garq61mt8pnnvb456iguv78eb6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.estan.lenderapp",
+            "certificate_hash": "f76fe12bfafc7779e2c08a0ee83ea4c801fd4b5f"
+          }
+        },
+        {
+          "client_id": "263173899177-honf4bn8d7qat78ktp77dh5lar77qmdi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAU8cm7KA7FfOnFRTfbPmD3a8Hzzu7_nWo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "263173899177-honf4bn8d7qat78ktp77dh5lar77qmdi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
