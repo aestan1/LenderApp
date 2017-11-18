@@ -73,20 +73,14 @@
                 </android.support.design.widget.TextInputLayout>
 
                 <EditText
-                    android:id="@+id/txtTasa"
+                    android:id="@+id/txtCuotas"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:editable="false"
-                    android:hint="@string/meses"
+                    android:hint="@string/nCuot"
                     android:inputType="number" />
 
             </android.support.design.widget.TextInputLayout>
-
-            <Spinner
-                android:id="@+id/cmbModo"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:spinnerMode="dialog" />
 
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
@@ -96,7 +90,7 @@
                     android:id="@+id/txtFechaAct"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:enabled="false"
+                    android:enabled="true"
                     android:hint="@string/fecha"
                     android:inputType="number" />
             </android.support.design.widget.TextInputLayout>
@@ -112,7 +106,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="74dp"
                     android:layout_weight="0.97"
-                    android:onClick="agregar"
+                    android:onClick="agregarPrestamo"
                     android:text="@string/guardar" />
 
                 <Button

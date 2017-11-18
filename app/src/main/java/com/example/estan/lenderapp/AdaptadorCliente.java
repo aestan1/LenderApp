@@ -2,17 +2,11 @@ package com.example.estan.lenderapp;
 
 import android.content.Context;
 import android.content.res.Resources;
-import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
-
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.StorageReference;
 
 import java.util.ArrayList;
 
@@ -36,7 +30,7 @@ public class AdaptadorCliente extends RecyclerView.Adapter<AdaptadorCliente.Clie
 
     @Override
     public ClienteViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_personas,parent,false);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_clientes,parent,false);
         return new ClienteViewHolder(v);
     }
 

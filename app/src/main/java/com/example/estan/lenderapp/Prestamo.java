@@ -8,27 +8,32 @@ public class Prestamo {
     private String id;
     private int valor;
     private int deudaActual;
+    private int cuotas;
+    private int cuotasRestantes;
     private String fechaI;
     private String fechaF;
     private Abono abono;
 
-    public Prestamo(){
+    public Prestamo() {
 
     }
 
-
-    public Prestamo(String id, int valor, int deudaActual, String fechaI, String fechaF, Abono abono) {
+    public Prestamo(String id, int valor, int deudaActual, int cuotas, int cuotasRestantes, String fechaI, String fechaF, Abono abono) {
         this.id = id;
         this.valor = valor;
         this.deudaActual = deudaActual;
+        this.cuotas = cuotas;
+        this.cuotasRestantes = cuotasRestantes;
         this.fechaI = fechaI;
         this.fechaF = fechaF;
         this.abono = abono;
     }
 
-    public Prestamo(int valor, int deudaActual, String fechaI, String fechaF, Abono abono) {
+    public Prestamo(int valor, int deudaActual, int cuotas, int cuotasRestantes, String fechaI, String fechaF, Abono abono) {
         this.valor = valor;
         this.deudaActual = deudaActual;
+        this.cuotas = cuotas;
+        this.cuotasRestantes = cuotasRestantes;
         this.fechaI = fechaI;
         this.fechaF = fechaF;
         this.abono = abono;
@@ -58,6 +63,22 @@ public class Prestamo {
         this.deudaActual = deudaActual;
     }
 
+    public int getCuotas() {
+        return cuotas;
+    }
+
+    public void setCuotas(int cuotas) {
+        this.cuotas = cuotas;
+    }
+
+    public int getCuotasRestantes() {
+        return cuotasRestantes;
+    }
+
+    public void setCuotasRestantes(int cuotasRestantes) {
+        this.cuotasRestantes = cuotasRestantes;
+    }
+
     public String getFechaI() {
         return fechaI;
     }
@@ -81,4 +102,15 @@ public class Prestamo {
     public void setAbono(Abono abono) {
         this.abono = abono;
     }
+
+    public void guardar(){
+        Datos.guardarPrestamo(this);
+    }
+
+/*    public void modificar(){Datos.actualizar(this);}
+
+    public void eliminar (){Datos.eliminar(this);}*/
 }
+
+
+

@@ -91,8 +91,8 @@ public class AgregarCliente extends AppCompatActivity {
             if (validar()) {
 
                 String id = Datos.getId();
-                Abono abono = new Abono(0,"");
-                Prestamo prestamo = new Prestamo(0,0,"","",abono);
+                Abono abono = new Abono();
+                Prestamo prestamo = new Prestamo();
                 Cliente c = new Cliente(id, txtCedula.getText().toString(), txtNombre.getText().toString(), txtApellido.getText().toString(), cmbSexo.getSelectedItemPosition(), txtDireccion.getText().toString(), txtCelular.getText().toString(), prestamo);
 
                 c.guardar();

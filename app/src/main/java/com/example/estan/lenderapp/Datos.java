@@ -14,11 +14,16 @@ public class Datos {
 
     private  static String bd = "Clientes";
     private static ArrayList<Cliente> clientes = new ArrayList<>();
+    private static ArrayList<Prestamo> prestamos = new ArrayList<>();
 
     public static void guardarCliente(Cliente c){
-
         databaseReference.child(bd).child(c.getId()).setValue(c);
     }
+
+    public static void guardarPrestamo(Prestamo p){
+        databaseReference.child(bd).child(getId()).setValue(p);
+    }
+
 
     public static ArrayList<Cliente> obtenerClientes(){
         return clientes;

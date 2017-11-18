@@ -27,7 +27,9 @@
         <activity
             android:name=".Principal"
             android:label="@string/title_activity_principal"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".ReporteClientes" />
+        <activity android:name=".TarjetaIndividual"></activity>
     </application>
 
 </manifest>
