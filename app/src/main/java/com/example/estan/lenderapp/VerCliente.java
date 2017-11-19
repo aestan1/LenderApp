@@ -39,13 +39,13 @@ public class VerCliente extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ver_cliente);
 
-        foto = (ImageView)findViewById(R.id.fotoModificar);
-        txtCedula= (EditText)findViewById(R.id.txtCedulaVer);
+        foto = (ImageView) findViewById(R.id.fotoModificar);
+        txtCedula = (EditText) findViewById(R.id.txtCedulaVer);
         lblNombre = (TextView) findViewById(R.id.lblNombre);
         lblApellido = (TextView) findViewById(R.id.lblApellido);
-        txtCelular = (EditText)findViewById(R.id.txtTelVer);
-        txtDeuda = (EditText)findViewById(R.id.txtDeudaVer);
-        txtDireccion = (EditText)findViewById(R.id.txtDireccionVer);
+        txtCelular = (EditText) findViewById(R.id.txtTelVer);
+        txtDeuda = (EditText) findViewById(R.id.txtDeudaVer);
+        txtDireccion = (EditText) findViewById(R.id.txtDireccionVer);
 
         i = getIntent();
         b = i.getBundleExtra("datos");
@@ -55,17 +55,24 @@ public class VerCliente extends AppCompatActivity {
         txtCedula.setText(b.getString("cedula"));
         txtCelular.setText(b.getString("celular"));
         txtDireccion.setText(b.getString("direccion"));
-        txtDeuda.setText(b.getString("apellido"));
-
-
-
+        txtDeuda.setText(b.getString("deudaActual"));
 
 
     }
 
-    public void llamar(View v){
-        try{
-            startActivity(new Intent(Intent.ACTION_CALL,Uri.parse("tel:"+txtCelular.getText().toString())));
+    public void llamar(View v) {
+        try {
+            if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+                // TODO: Consider calling
+                //    ActivityCompat#requestPermissions
+                // here to request the missing permissions, and then overriding
+                //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+                //                                          int[] grantResults)
+                // to handle the case where the user grants the permission. See the documentation
+                // for ActivityCompat#requestPermissions for more details.
+                return;
+            }
+            startActivity(new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + txtCelular.getText().toString())));
         }catch(Exception e){
             e.printStackTrace();
         }

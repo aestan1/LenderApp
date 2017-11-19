@@ -86,6 +86,9 @@
             b.putString("cedula",c.getCedula());
             b.putString("nombre",c.getNombre());
             b.putString("apellido",c.getApellido());
+            b.putString("direccion",c.getDireccion());
+            b.putString("celular",c.getCelular());
+            b.putString("deudaActual", (""+ c.getPrestamo().getDeudaActual()));
 
 
             i.putExtra("datos",b);
