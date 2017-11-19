@@ -65,4 +65,6 @@
     <string name="dia">dia</string>
     <string name="abono">Abono</string>
     <string name="saldo">Saldo</string>
+    <string name="deudaActual">Deuda Actual</string>
+    <string name="llamar">Llamar</string>
 </resources>

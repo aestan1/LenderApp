@@ -80,7 +80,7 @@
 
         @Override
         public void onClienteClick(Cliente c) {
-            Intent i = new Intent(Principal.this,AgregarPrestamo.class);
+            Intent i = new Intent(Principal.this,VerCliente.class);
             Bundle b = new Bundle();
             b.putString("id",c.getId());
             b.putString("cedula",c.getCedula());

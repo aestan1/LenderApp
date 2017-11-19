@@ -6,6 +6,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -39,9 +40,18 @@ public class AdaptadorCliente extends RecyclerView.Adapter<AdaptadorCliente.Clie
         final Cliente c = clientes.get(position);
 
 
+        if(c.getSexo()==1){
+            holder.foto.setImageResource(R.drawable.boy2client128);
+        }
+        else if(c.getSexo()==2){
+            holder.foto.setImageResource(R.drawable.girl2client128);
+        }
+
         holder.cedula.setText(c.getCedula());
         holder.nombre.setText(c.getNombre());
         holder.apellido.setText(c.getApellido());
+        holder.direccion.setText(c.getDireccion());
+        //holder.direccion.setText(c.getPrestamo().getdireccionActual());
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,17 +67,20 @@ public class AdaptadorCliente extends RecyclerView.Adapter<AdaptadorCliente.Clie
     }
 
     public static class ClienteViewHolder extends RecyclerView.ViewHolder{
-
+        private ImageView foto;
         private TextView cedula;
         private TextView nombre;
         private TextView apellido;
+        private TextView direccion;
 
 
         public ClienteViewHolder(View item){
             super(item);
+            foto = (ImageView) item.findViewById(R.id.imgFoto) ;
             cedula = (TextView) item.findViewById(R.id.lblCedula);
             nombre = (TextView) item.findViewById(R.id.lblNombre);
             apellido = (TextView) item.findViewById(R.id.lblApellido);
+            direccion = (TextView) item.findViewById(R.id.lblDeuda);
         }
     }
 

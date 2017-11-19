@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.estan.lenderapp">
-
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/la_launcher"
@@ -17,19 +17,17 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".PrincipalActivity"
+            android:name=".Principal"
             android:label="@string/title_activity_principal"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".AgregarCliente" />
         <activity android:name=".Simulador" />
         <activity android:name=".AgregarPrestamo" />
         <activity android:name=".AgregarAbono" />
-        <activity
-            android:name=".Principal"
-            android:label="@string/title_activity_principal"
-            android:theme="@style/AppTheme.NoActionBar" />
+
         <activity android:name=".ReporteClientes" />
-        <activity android:name=".TarjetaIndividual"></activity>
+        <activity android:name=".TarjetaIndividual" />
+        <activity android:name=".VerCliente"></activity>
     </application>
 
 </manifest>
