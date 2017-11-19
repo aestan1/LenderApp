@@ -39,29 +39,25 @@ public class AgregarPrestamo extends AppCompatActivity {
         txtValor = (EditText)findViewById(R.id.txtValor);
         txtPorcentaje = (EditText)findViewById(R.id.txtPorcentaje);
         txtNcuot = (EditText)findViewById(R.id.txtCuotas);
-
-        Calendar fechaActual = Calendar.getInstance();
-        //SimpleDateFormat format = new SimpleDateFormat(" dd/MM/YY, h:mm a");
-        //txtFechaAct.setText(format.format(fechaActual.getTime()).toString());
-        storageReference = FirebaseStorage.getInstance().getReference();
         txtFechaAct = (EditText)findViewById(R.id.txtFechaAct);
+        Calendar fechaActual = Calendar.getInstance();
+        SimpleDateFormat format = new SimpleDateFormat(" dd/MM/YY, h:mm a");
+        txtFechaAct.setText(format.format(fechaActual.getTime()).toString());
+        storageReference = FirebaseStorage.getInstance().getReference();
+
 
         i = getIntent();
         b = i.getBundleExtra("datos");
 
-
-
-
     }
 
-    /*public void agregarPrestamo(View v){
+    public void agregarPrestamo(View v){
         int valor = Integer.parseInt(txtValor.getText().toString());
         int porcentaje = Integer.parseInt(txtPorcentaje.getText().toString());
         int cuotas = Integer.parseInt(txtNcuot.getText().toString());
         String fecha = txtFechaAct.getText().toString();
-        Abono abono= new Abono(0,"na");
+        Abono abono= new Abono(0,"");
         Prestamo p = new Prestamo(b.getString("id"),valor,valor,cuotas, cuotas, fecha, fecha, abono);
-
 
                 p.guardar();
                 Snackbar.make(v, R.string.mensaje_cliente_guardado,Snackbar.LENGTH_SHORT).setAction("action",null).show();
@@ -69,17 +65,13 @@ public class AgregarPrestamo extends AppCompatActivity {
 
 
 
-    }*/
-
-
-
-
-
-    public void onBackPressed(){
-        finish();
-        Intent i = new Intent(AgregarPrestamo.this,Principal.class);
-        startActivity(i);
     }
+
+
+
+
+
+
 
 
 }

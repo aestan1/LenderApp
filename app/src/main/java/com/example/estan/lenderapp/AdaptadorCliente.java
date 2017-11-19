@@ -48,8 +48,7 @@ public class AdaptadorCliente extends RecyclerView.Adapter<AdaptadorCliente.Clie
         }
 
         holder.cedula.setText(c.getCedula());
-        holder.nombre.setText(c.getNombre());
-        holder.apellido.setText(c.getApellido());
+        holder.nombre.setText(c.getApellido()+" "+c.getNombre());
         holder.direccion.setText(c.getDireccion());
         //holder.direccion.setText(c.getPrestamo().getdireccionActual());
 
@@ -70,7 +69,6 @@ public class AdaptadorCliente extends RecyclerView.Adapter<AdaptadorCliente.Clie
         private ImageView foto;
         private TextView cedula;
         private TextView nombre;
-        private TextView apellido;
         private TextView direccion;
 
 
@@ -79,7 +77,6 @@ public class AdaptadorCliente extends RecyclerView.Adapter<AdaptadorCliente.Clie
             foto = (ImageView) item.findViewById(R.id.imgFoto) ;
             cedula = (TextView) item.findViewById(R.id.lblCedula);
             nombre = (TextView) item.findViewById(R.id.lblNombre);
-            apellido = (TextView) item.findViewById(R.id.lblApellido);
             direccion = (TextView) item.findViewById(R.id.lblDeuda);
         }
     }
@@ -87,5 +84,6 @@ public class AdaptadorCliente extends RecyclerView.Adapter<AdaptadorCliente.Clie
     public interface OnClienteClickListener{
         void onClienteClick(Cliente c);
     }
+
 
 }

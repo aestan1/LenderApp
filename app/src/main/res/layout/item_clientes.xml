@@ -47,15 +47,6 @@ android:orientation="vertical">
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/lblApellido"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:lineSpacingExtra="20sp"
-                    android:text="TextView"
-                    android:textAlignment="viewStart"
-                    android:textStyle="bold" />
-
-                <TextView
                     android:id="@+id/lblDeuda"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -76,6 +67,7 @@ android:orientation="vertical">
                     android:layout_width="38dp"
                     android:layout_height="wrap_content"
                     android:backgroundTint="@color/cardview_light_background"
+                    android:onClick="agregarA"
                     app:srcCompat="@drawable/yes32" />
 
                 <ImageButton

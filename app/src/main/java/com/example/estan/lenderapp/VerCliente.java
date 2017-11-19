@@ -29,6 +29,7 @@ public class VerCliente extends AppCompatActivity {
     private EditText txtCelular;
     private EditText txtCedula;
     private EditText txtDeuda;
+    private EditText txtRest;
     private Intent i;
     private Bundle b;
     private StorageReference storageReference;
@@ -38,24 +39,29 @@ public class VerCliente extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ver_cliente);
-
+        String nombre;
+        String sexo;
         foto = (ImageView) findViewById(R.id.fotoModificar);
         txtCedula = (EditText) findViewById(R.id.txtCedulaVer);
         lblNombre = (TextView) findViewById(R.id.lblNombre);
-        lblApellido = (TextView) findViewById(R.id.lblApellido);
         txtCelular = (EditText) findViewById(R.id.txtTelVer);
         txtDeuda = (EditText) findViewById(R.id.txtDeudaVer);
         txtDireccion = (EditText) findViewById(R.id.txtDireccionVer);
+        txtRest=(EditText)findViewById(R.id.txtCuotasVer);
+
 
         i = getIntent();
         b = i.getBundleExtra("datos");
-
-        lblNombre.setText(b.getString("nombre"));
-        lblApellido.setText(b.getString("apellido"));
+        nombre = ""+b.getString("nombre")+" "+b.getString("apellido");
+        sexo = b.getString("sexo");
+        lblNombre.setText(nombre);
+        colocarFoto(sexo);
         txtCedula.setText(b.getString("cedula"));
         txtCelular.setText(b.getString("celular"));
         txtDireccion.setText(b.getString("direccion"));
         txtDeuda.setText(b.getString("deudaActual"));
+        txtRest.setText(b.getString("cuotasRestantes"));
+
 
 
     }
@@ -79,24 +85,26 @@ public class VerCliente extends AppCompatActivity {
     }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
     public void onBackPressed(){
         finish();
         Intent i = new Intent(VerCliente.this,Principal.class);
         startActivity(i);
     }
+
+    public void colocarFoto(String sexo){
+        if(sexo.equalsIgnoreCase("1")){
+            foto.setImageResource(R.drawable.boy2client128);
+        }
+        else if(sexo.equalsIgnoreCase("2")){
+            foto.setImageResource(R.drawable.girl2client128);
+        }
+    }
+
+    public void agregarP(View v){
+        setContentView(R.layout.activity_agregar_prestamo);
+    }
+
+
 
 
 

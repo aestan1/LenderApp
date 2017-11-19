@@ -12,6 +12,8 @@
     tools:layout_editor_absoluteX="8dp"
     tools:layout_editor_absoluteY="8dp">
 
+
+
     ]]>
 
     <LinearLayout
@@ -21,24 +23,12 @@
 
         <TextView
             android:id="@+id/lblNombre"
-            android:layout_width="84dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:paddingRight="2dp"
             android:text=""
-            android:textAlignment="viewEnd"
-            android:textAllCaps="true"
-            android:textSize="24sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/lblApellido"
-            android:layout_width="84dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:paddingLeft="2dp"
-            android:text=""
-            android:textAlignment="viewStart"
+            android:textAlignment="center"
             android:textAllCaps="true"
             android:textSize="24sp"
             android:textStyle="bold" />
@@ -107,6 +97,21 @@
             android:hint="@string/deudaActual" />
     </android.support.design.widget.TextInputLayout>
 
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/txtCuotasVer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            android:hint="@string/cuotRest"
+            android:textColorHighlight="@color/colorAccent"
+            android:textColorHint="@color/colorAccent"
+            android:textColorLink="@color/colorAccent" />
+    </android.support.design.widget.TextInputLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -119,6 +124,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
 
+            android:onClick="agregarP"
             android:text="@string/agregarP" />
 
         <Button

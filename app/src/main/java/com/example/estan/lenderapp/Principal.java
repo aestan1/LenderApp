@@ -77,6 +77,10 @@
 
         }
 
+        public void agregarA(View v){
+            setContentView(R.layout.activity_agregar_abono);
+        }
+
 
         @Override
         public void onClienteClick(Cliente c) {
@@ -88,7 +92,9 @@
             b.putString("apellido",c.getApellido());
             b.putString("direccion",c.getDireccion());
             b.putString("celular",c.getCelular());
+            b.putString("sexo", ""+ c.getSexo());
             b.putString("deudaActual", (""+ c.getPrestamo().getDeudaActual()));
+            b.putString("cuotasRestantes", (""+c.getPrestamo().getCuotasRestantes()));
 
 
             i.putExtra("datos",b);

@@ -120,4 +120,15 @@ public class Simulador extends AppCompatActivity {
 
         }
     }
+
+    public void limpiar (View v){
+    valor.setText("");
+        porcentaje.setText("");
+        meses.setText("");
+        modo.setSelection(0);
+        cuota.setText("");
+        nCuota.setText("");
+        total.setText("");
+
+    }
 }
