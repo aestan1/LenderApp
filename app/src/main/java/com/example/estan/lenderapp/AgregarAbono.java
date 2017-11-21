@@ -1,5 +1,6 @@
 package com.example.estan.lenderapp;
 
+import android.content.Intent;
 import android.content.res.Resources;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -44,6 +45,12 @@ public class AgregarAbono extends AppCompatActivity {
 
     public void limpiar(View v){
         txtValor.setText("");
+    }
+
+    public void onBackPressed() {
+        finish();
+        Intent i = new Intent(AgregarAbono.this, Principal2.class);
+        startActivity(i);
     }
 
 

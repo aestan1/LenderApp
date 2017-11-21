@@ -48,7 +48,7 @@ public class Login extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
-                    Intent i = new Intent(Login.this,Principal.class);
+                    Intent i = new Intent(Login.this,Principal2.class);
                     startActivity(i);
                     finish();
                 }else{
@@ -65,7 +65,7 @@ public class Login extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
-                    Intent i = new Intent(Login.this,Principal.class);
+                    Intent i = new Intent(Login.this,Principal2.class);
                     startActivity(i);
                     finish();
                 }else {

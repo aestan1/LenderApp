@@ -87,7 +87,7 @@ public class VerCliente extends AppCompatActivity {
 
     public void onBackPressed(){
         finish();
-        Intent i = new Intent(VerCliente.this,Principal.class);
+        Intent i = new Intent(VerCliente.this,Principal2.class);
         startActivity(i);
     }
 

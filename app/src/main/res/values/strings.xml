@@ -70,6 +70,8 @@
     <string name="cuotRest">Cuotas Restantes</string>
     <string name="error5">Debe indicar un numero valido</string>
     <string name="title_activity_principal2">Principal2</string>
+    <string name="listaCLientes">Lista clientes</string>
+    <string name="actualizar">Actualizar</string>
 
     <!-- TODO: Remove or change this placeholder text -->
 </resources>

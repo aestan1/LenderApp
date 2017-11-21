@@ -98,14 +98,10 @@ public class Principal2 extends AppCompatActivity
         });//hasta aqui
     }
 
-    @Override
     public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START);
-        } else {
-            super.onBackPressed();
-        }
+        finish();
+        Intent i = new Intent(Principal2.this, Principal2.class);
+        startActivity(i);
     }
 
     public void agregar (View v){
@@ -168,15 +164,18 @@ public class Principal2 extends AppCompatActivity
 
 
         if (id == R.id.nav_camera) {
-            // Handle the camera action
+            Intent anIntent = new Intent(getApplicationContext(), Simulador.class);
+            startActivity(anIntent);
         } else if (id == R.id.nav_gallery) {
             Intent anIntent = new Intent(getApplicationContext(), AgregarCliente.class);
             startActivity(anIntent);
 
         } else if (id == R.id.nav_slideshow) {
-
+            Intent anIntent = new Intent(getApplicationContext(),ReporteClientes.class);
+            startActivity(anIntent);
         } else if (id == R.id.nav_manage) {
-
+            Intent anIntent = new Intent(getApplicationContext(),Principal2.class);
+            startActivity(anIntent);
         } else if (id == R.id.nav_share) {
 
         } else if (id == R.id.nav_send) {
