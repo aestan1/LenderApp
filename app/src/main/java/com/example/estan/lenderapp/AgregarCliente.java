@@ -116,7 +116,7 @@ public class AgregarCliente extends AppCompatActivity {
 
         public void onBackPressed() {
             finish();
-            Intent i = new Intent(AgregarCliente.this, Principal2.class);
+            Intent i = new Intent(AgregarCliente.this, Principal.class);
             startActivity(i);
         }
 

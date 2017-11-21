@@ -36,6 +36,8 @@
             setSupportActionBar(toolbar);
 
 
+
+
         listado = (RecyclerView)findViewById(R.id.lstClientes);
         res = this.getResources();
         clientes = new ArrayList<>();
