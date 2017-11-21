@@ -17,5 +17,16 @@ public class Metodos {
         return false;
     }
 
+    public static boolean validarCelular(TextView t, String mensaje) {
+        if (t.getText().toString().isEmpty()||t.length()!=10){
+            t.requestFocus();
+            t.setError(mensaje);
+            return true;
+        }
+        return false;
+    }
+
+
+
 
 }

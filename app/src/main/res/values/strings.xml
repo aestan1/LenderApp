@@ -68,4 +68,6 @@
     <string name="deudaActual">Deuda Actual</string>
     <string name="llamar">Llamar</string>
     <string name="cuotRest">Cuotas Restantes</string>
+    <string name="error5">Debe indicar un numero valido</string>
+    <string name="title_activity_principal2">Principal2</string>
 </resources>

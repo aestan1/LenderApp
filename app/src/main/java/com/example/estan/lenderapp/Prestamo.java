@@ -1,5 +1,7 @@
 package com.example.estan.lenderapp;
 
+import java.util.ArrayList;
+
 /**
  * Created by Estan on 11/11/2017.
  */
@@ -12,13 +14,13 @@ public class Prestamo {
     private int cuotasRestantes;
     private String fechaI;
     private String fechaF;
-    private Abono abono;
+    private ArrayList<Abono> abonos;
 
     public Prestamo() {
 
     }
 
-    public Prestamo(String id, int valor, int deudaActual, int cuotas, int cuotasRestantes, String fechaI, String fechaF, Abono abono) {
+    public Prestamo(String id, int valor, int deudaActual, int cuotas, int cuotasRestantes, String fechaI, String fechaF, ArrayList<Abono> abonos) {
         this.id = id;
         this.valor = valor;
         this.deudaActual = deudaActual;
@@ -26,17 +28,17 @@ public class Prestamo {
         this.cuotasRestantes = cuotasRestantes;
         this.fechaI = fechaI;
         this.fechaF = fechaF;
-        this.abono = abono;
+        this.abonos = abonos;
     }
 
-    public Prestamo(int valor, int deudaActual, int cuotas, int cuotasRestantes, String fechaI, String fechaF, Abono abono) {
+    public Prestamo(int valor, int deudaActual, int cuotas, int cuotasRestantes, String fechaI, String fechaF, ArrayList<Abono> abonos) {
         this.valor = valor;
         this.deudaActual = deudaActual;
         this.cuotas = cuotas;
         this.cuotasRestantes = cuotasRestantes;
         this.fechaI = fechaI;
         this.fechaF = fechaF;
-        this.abono = abono;
+        this.abonos = abonos;
     }
 
     public String getId() {
@@ -95,12 +97,12 @@ public class Prestamo {
         this.fechaF = fechaF;
     }
 
-    public Abono getAbono() {
-        return abono;
+    public ArrayList<Abono> getAbonos() {
+        return abonos;
     }
 
-    public void setAbono(Abono abono) {
-        this.abono = abono;
+    public void setAbonos(ArrayList<Abono> abonos) {
+        this.abonos = abonos;
     }
 
     public void guardar(){

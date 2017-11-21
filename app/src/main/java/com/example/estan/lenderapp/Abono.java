@@ -10,20 +10,23 @@ public class Abono {
     private String id;
     private int valor;
     private String fecha;
+    private String estado;
 
     public Abono(){
 
     }
 
-    public Abono(int valor, String fecha) {
+    public Abono(int valor, String fecha, String estado) {
         this.valor = valor;
         this.fecha = fecha;
+        this.estado=estado;
     }
 
-    public Abono(String id, int valor, String fecha) {
+    public Abono(String id, int valor, String fecha, String estado) {
         this.id = id;
         this.valor = valor;
         this.fecha = fecha;
+        this.estado=estado;
     }
 
     public String getId() {
@@ -48,6 +51,18 @@ public class Abono {
 
     public void setFecha(String fecha) {
         this.fecha = fecha;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
+    public void guardar(){
+        Datos.guardarAbono(this);
     }
 }
 

@@ -17,6 +17,7 @@ import com.google.firebase.storage.StorageReference;
 import com.squareup.picasso.Picasso;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -56,8 +57,8 @@ public class AgregarPrestamo extends AppCompatActivity {
         int porcentaje = Integer.parseInt(txtPorcentaje.getText().toString());
         int cuotas = Integer.parseInt(txtNcuot.getText().toString());
         String fecha = txtFechaAct.getText().toString();
-        Abono abono= new Abono(0,"");
-        Prestamo p = new Prestamo(b.getString("id"),valor,valor,cuotas, cuotas, fecha, fecha, abono);
+        ArrayList<Abono> abonos= new ArrayList<>();
+        Prestamo p = new Prestamo(b.getString("id"),valor,valor,cuotas, cuotas, fecha, fecha, abonos);
 
                 p.guardar();
                 Snackbar.make(v, R.string.mensaje_cliente_guardado,Snackbar.LENGTH_SHORT).setAction("action",null).show();
@@ -65,6 +66,12 @@ public class AgregarPrestamo extends AppCompatActivity {
 
 
 
+    }
+
+    public void limpiar(View v) {
+        txtNcuot.setText("");
+        txtPorcentaje.setText("");
+        txtValor.setText("");
     }
 
 

@@ -46,7 +46,6 @@
                     android:id="@+id/txtFechaAct"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:enabled="false"
                     android:hint="@string/fecha"
                     android:inputType="number" />
             </android.support.design.widget.TextInputLayout>
@@ -62,7 +61,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="74dp"
                     android:layout_weight="0.97"
-                    android:onClick="agregar"
+                    android:onClick="agregarAbono"
                     android:text="@string/guardar" />
 
                 <Button

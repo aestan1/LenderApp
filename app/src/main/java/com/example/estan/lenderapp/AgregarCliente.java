@@ -32,7 +32,6 @@ public class AgregarCliente extends AppCompatActivity {
         private EditText txtDireccion;
         private EditText txtCelular;
         private Spinner cmbSexo;
-        private ArrayList<Integer> fotos;
         private ArrayList<String> adapter;
         private String op;
         private String sex[];
@@ -56,27 +55,23 @@ public class AgregarCliente extends AppCompatActivity {
             txtCelular=(EditText) findViewById(R.id.txtcelular);
 
 
-            inicializar_fotos();
+
 
             ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, sex);
             cmbSexo.setAdapter(adapter1);
         }
 
-        public void inicializar_fotos() {
-            fotos = new ArrayList<>();
-            fotos.add(R.drawable.boy2client128);
-            fotos.add(R.drawable.girl2client128);
 
-        }
 
         public boolean validar() {
             int se=cmbSexo.getSelectedItemPosition();
             String aux = res.getString(R.string.error1);
+            String menCel = res.getString(R.string.error5);
             if (Metodos.validar_aux(txtCedula, aux)) return false;
             else if (Metodos.validar_aux(txtNombre, aux)) return false;
             else if (Metodos.validar_aux(txtApellido, aux)) return false;
             else if (Metodos.validar_aux(txtDireccion, aux)) return false;
-            else if (Metodos.validar_aux(txtCelular, aux)) return false;
+            else if (Metodos.validarCelular(txtCelular, menCel)) return false;
             else if (se==0){
                 if(se==0) {
                     Toast.makeText(this, res.getString(R.string.error4), Toast.LENGTH_SHORT ).show();
@@ -91,8 +86,8 @@ public class AgregarCliente extends AppCompatActivity {
             if (validar()) {
 
                 String id = Datos.getId();
-                Abono abono = new Abono();
-                Prestamo prestamo = new Prestamo(id, 2, 2, 2,2,"","",abono);
+                ArrayList<Abono> abonos= new ArrayList<>();
+                Prestamo prestamo = new Prestamo(id, 0, 0, 0,0,"","", abonos);
                 Cliente c = new Cliente(id, txtCedula.getText().toString(), txtNombre.getText().toString(), txtApellido.getText().toString(), cmbSexo.getSelectedItemPosition(), txtDireccion.getText().toString(), txtCelular.getText().toString(), prestamo);
 
                 c.guardar();
@@ -126,15 +121,6 @@ public class AgregarCliente extends AppCompatActivity {
         }
 
 
-        protected void onActivityResult(int requesCode, int resultCode, Intent data) {
-            super.onActivityResult(requesCode, resultCode, data);
-            if (requesCode == 1) {
-                uri = data.getData();
-                if (uri != null) {
-                    foto.setImageURI(uri);
-                }
-            }
-        }
 
 
 

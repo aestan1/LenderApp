@@ -1,11 +1,14 @@
 package com.example.estan.lenderapp;
 
 import android.content.res.Resources;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.EditText;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -27,6 +30,20 @@ public class AgregarAbono extends AppCompatActivity {
         SimpleDateFormat format = new SimpleDateFormat(" dd/MM/YY, h:mm a");
         txtFechaAct.setText(format.format(fechaActual.getTime()).toString());
 
+    }
+
+    public void agregarAbono(View v) {
+      //  if (validar()) {
+            Abono a = new Abono( Integer.parseInt(txtValor.getText().toString()), txtFechaAct.getText().toString(), "agregado");
+
+            a.guardar();
+            Snackbar.make(v, res.getString(R.string.mensaje_cliente_guardado), Snackbar.LENGTH_LONG).setAction("Action", null).show();
+
+       // }
+    }
+
+    public void limpiar(View v){
+        txtValor.setText("");
     }
 
 

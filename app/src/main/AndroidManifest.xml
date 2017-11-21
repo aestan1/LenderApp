@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.estan.lenderapp">
-    <uses-permission android:name="android.permission.CALL_PHONE"/>
+
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/la_launcher"
@@ -24,10 +26,14 @@
         <activity android:name=".Simulador" />
         <activity android:name=".AgregarPrestamo" />
         <activity android:name=".AgregarAbono" />
-
         <activity android:name=".ReporteClientes" />
         <activity android:name=".TarjetaIndividual" />
-        <activity android:name=".VerCliente"></activity>
+        <activity android:name=".VerCliente" />
+        <activity android:name=".Login" />
+        <activity
+            android:name=".Principal2"
+            android:label="@string/title_activity_principal2"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
