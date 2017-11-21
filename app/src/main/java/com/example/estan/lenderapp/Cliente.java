@@ -105,7 +105,9 @@ public class Cliente {
     }
 
     public void guardar(){
+        Datos.guardarCliente(this);
     }
+    public void modificar(){Datos.actualizar(this);}
 
 
 }

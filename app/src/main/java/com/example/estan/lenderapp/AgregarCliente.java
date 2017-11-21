@@ -1,11 +1,15 @@
 package com.example.estan.lenderapp;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.net.Uri;
 import android.support.design.widget.Snackbar;
 import android.support.v4.content.res.ResourcesCompat;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -57,6 +61,7 @@ public class AgregarCliente extends AppCompatActivity {
 
 
 
+
             ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, sex);
             cmbSexo.setAdapter(adapter1);
         }
@@ -82,19 +87,62 @@ public class AgregarCliente extends AppCompatActivity {
 
         }
 
-        public void agregar(View v) {
-            if (validar()) {
+        public void agregar() {
+
 
                 String id = Datos.getId();
                 ArrayList<Abono> abonos= new ArrayList<>();
-                Prestamo prestamo = new Prestamo(id, 0, 0, 0,0,"","", abonos);
+                Prestamo prestamo = new Prestamo(id, 2, 2, 2,2,"","", abonos);
                 Cliente c = new Cliente(id, txtCedula.getText().toString(), txtNombre.getText().toString(), txtApellido.getText().toString(), cmbSexo.getSelectedItemPosition(), txtDireccion.getText().toString(), txtCelular.getText().toString(), prestamo);
 
                 c.guardar();
-                Snackbar.make(v, res.getString(R.string.mensaje_cliente_guardado), Snackbar.LENGTH_LONG).setAction("Action", null).show();
+                //Snackbar.make(, res.getString(R.string.mensaje_cliente_guardado), Snackbar.LENGTH_LONG).setAction("Action", null).show();
+                Toast toast = Toast.makeText(getApplicationContext(), res.getString(R.string.mensaje_cliente_guardado), Toast.LENGTH_LONG);
+                toast.show();
                 limpiar();
-            }
+
+
+
+
         }
+
+
+
+        public void confirmacion (View v) {
+            String positivo, negativo;
+
+            if (validar()) {
+                final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                builder.setTitle(res.getString(R.string.confirmacion));
+                builder.setMessage(res.getString(R.string.info));
+                positivo = res.getString(R.string.ok);
+                negativo = res.getString(R.string.cancelar);
+
+
+                builder.setPositiveButton(positivo, new DialogInterface.OnClickListener() {
+
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        agregar();
+
+
+                    }
+                });
+                builder.setNegativeButton(negativo, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+
+                    }
+                });
+                AlertDialog dialog = builder.create();
+                dialog.show();
+            }
+
+
+        }
+
+
+
 
 
         public void limpiar(View v) {

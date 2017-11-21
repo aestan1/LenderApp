@@ -101,7 +101,8 @@ public class VerCliente extends AppCompatActivity {
     }
 
     public void agregarP(View v){
-        setContentView(R.layout.activity_agregar_prestamo);
+        Intent i = new Intent(VerCliente.this,AgregarPrestamo.class);
+        startActivity(i);
     }
 
 

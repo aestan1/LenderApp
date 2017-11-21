@@ -26,8 +26,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class Principal2 extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener, AdaptadorCliente.OnClienteClickListener {
+public class Principal2 extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, AdaptadorCliente.OnClienteClickListener {
     private RecyclerView listado;
     private ArrayList<Cliente> clientes;
     private Resources res;
@@ -111,7 +110,8 @@ public class Principal2 extends AppCompatActivity
     }
 
     public void agregarA(View v){
-        setContentView(R.layout.activity_agregar_abono);
+        Intent i = new Intent(Principal2.this,AgregarPrestamo.class);
+        startActivity(i);
     }
 
     @Override
@@ -125,6 +125,7 @@ public class Principal2 extends AppCompatActivity
         b.putString("direccion",c.getDireccion());
         b.putString("celular",c.getCelular());
         b.putString("sexo", ""+ c.getSexo());
+
         b.putString("deudaActual", (""+ c.getPrestamo().getDeudaActual()));
         b.putString("cuotasRestantes", (""+c.getPrestamo().getCuotasRestantes()));
 
@@ -176,10 +177,6 @@ public class Principal2 extends AppCompatActivity
         } else if (id == R.id.nav_manage) {
             Intent anIntent = new Intent(getApplicationContext(),Principal2.class);
             startActivity(anIntent);
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

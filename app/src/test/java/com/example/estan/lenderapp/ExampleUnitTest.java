@@ -11,7 +11,27 @@ import static org.junit.Assert.*;
  */
 public class ExampleUnitTest {
     @Test
-    public void addition_isCorrect() throws Exception {
-        assertEquals(4, 2 + 2);
+    public void CantidadDeCuotasAPagar(){
+        double vEsperado=8;
+        double vReal=Metodos.calcularCuotas(2,2);
+
+        assertEquals(vEsperado,vReal, 0);
     }
-}
+
+    @Test
+    public void ValorDeCadaCuota(){
+        double vEsperado=4000;
+        double vReal=Metodos.calcularValorCuotas(100000,20,1,1);
+
+        assertEquals(vEsperado,vReal, 0);
+    }
+
+    @Test
+    public void ValorAPagarEnTotal(){
+        double vEsperado=120000;
+        double vReal=Metodos.calcularTotal(100000,20,1,1);
+
+        assertEquals(vEsperado,vReal, 0);
+    }
+
+    }

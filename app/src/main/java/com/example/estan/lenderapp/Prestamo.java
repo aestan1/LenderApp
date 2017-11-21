@@ -109,9 +109,9 @@ public class Prestamo {
         Datos.guardarPrestamo(this);
     }
 
-/*    public void modificar(){Datos.actualizar(this);}
+    public void modificar(){Datos.actualizarP(this);}
 
-    public void eliminar (){Datos.eliminar(this);}*/
+    //public void eliminar (){Datos.eliminar(this);}*/
 }
 
 

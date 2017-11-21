@@ -91,25 +91,9 @@ public class Simulador extends AppCompatActivity {
             val= Integer.parseInt(valor.getText().toString());
             porc=Integer.parseInt(porcentaje.getText().toString());
             me=Integer.parseInt(meses.getText().toString());
-
-            if(opc==1){
-                cuotas=30;
-            }
-            else if(opc==2){
-                cuotas=4;
-            }
-            else if(opc==3){
-                cuotas = 2;
-            }
-            else if (opc==4){
-                cuotas = 1;
-            }
-
-
-            aux= (val*porc)/100;
-            porc=aux*me;
-            valCuot=(val+porc)/(cuotas*me);
-            tot=val+porc;
+            cuotas=Metodos.calcularCuotas(opc,me);
+            valCuot=Metodos.calcularValorCuotas(val,porc,me,opc);
+            tot=Metodos.calcularTotal(val,porc,me,opc);
 
             cuota.setText("$: " + String.format("%.2f", valCuot));
             nCuota.setText(""+ cuotas*me);

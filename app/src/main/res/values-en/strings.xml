@@ -56,4 +56,11 @@
     <string name="cuotRest">Quotas remaining</string>
     <string name="error5">You must indicate a valid number</string>
     <string name="title_activity_principal2">Principal2</string>
+    <string name="listaCLientes">List Client</string>
+    <string name="actualizar">Refresh</string>
+    <string name="mensaje_prestamo_agregado_exitosamente">Loan successfully added</string>
+    <string name="confirmacion">" Surely you want to add?"</string>
+    <string name="info">" Remember to verify the information"</string>
+    <string name="ok">Confirm</string>
+    <string name="cancelar">Cancel</string>
 </resources>

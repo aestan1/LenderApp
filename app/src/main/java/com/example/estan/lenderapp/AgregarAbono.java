@@ -29,7 +29,7 @@ public class AgregarAbono extends AppCompatActivity {
         txtFechaAct = (EditText)findViewById(R.id.txtFechaAct);
         Calendar fechaActual = Calendar.getInstance();
         SimpleDateFormat format = new SimpleDateFormat(" dd/MM/YY, h:mm a");
-        txtFechaAct.setText(format.format(fechaActual.getTime()).toString());
+        txtFechaAct.setText("hola");
 
     }
 

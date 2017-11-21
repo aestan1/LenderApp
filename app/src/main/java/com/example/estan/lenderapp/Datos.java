@@ -13,6 +13,7 @@ public class Datos {
     private static DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
 
     private  static String bd = "Clientes";
+    private static String pr = "prestamo";
     private static String ab = "abonos";
     private static ArrayList<Cliente> clientes = new ArrayList<>();
     private static ArrayList<Prestamo> prestamos = new ArrayList<>();
@@ -44,6 +45,10 @@ public class Datos {
     }
     public static void actualizar(Cliente c){
         databaseReference.child(bd).child(c.getId()).setValue(c);
+    }
+
+    public static void actualizarP(Prestamo p){
+        databaseReference.child(bd).child(p.getId()).setValue(p);
     }
 
     public static void eliminar (Cliente c){

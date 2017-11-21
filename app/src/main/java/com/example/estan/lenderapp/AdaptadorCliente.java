@@ -50,7 +50,7 @@ public class AdaptadorCliente extends RecyclerView.Adapter<AdaptadorCliente.Clie
         holder.cedula.setText(c.getCedula());
         holder.nombre.setText(c.getApellido()+" "+c.getNombre());
         holder.direccion.setText(c.getDireccion());
-        //holder.direccion.setText(c.getPrestamo().getdireccionActual());
+        holder.direccion.setText(""+c.getPrestamo().getDeudaActual());
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,6 +70,7 @@ public class AdaptadorCliente extends RecyclerView.Adapter<AdaptadorCliente.Clie
         private TextView cedula;
         private TextView nombre;
         private TextView direccion;
+
 
 
         public ClienteViewHolder(View item){
